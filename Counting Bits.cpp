@@ -24,3 +24,24 @@ public:
         return s;
     }
 };
+
+SIMPLER CODE:
+
+class Solution {
+public:
+    vector<int> countBits(int n) {
+        vector<int>v(n+1);
+        if(n==0)
+        return v;
+        for(int i=0;i<v.size();i++){
+            int k=i;
+            int s=0;
+            while(k){
+                s=s+(k%2);
+                k=k/2;
+            }
+            v[i]=s;
+        }
+        return v;
+    }
+};
